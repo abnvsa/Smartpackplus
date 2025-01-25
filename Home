@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMART PACK PLUS</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+        header {
+            background-color: #6A1B9A; /* Matching purple from logo */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header img {
+            max-width: 150px;
+            margin-bottom: 10px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        nav {
+            background-color: #8E24AA; /* Slightly lighter purple */
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .intro {
+            text-align: center;
+            background: url('https://via.placeholder.com/1200x400/6A1B9A/FFFFFF?text=Welcome+to+Smart+Pack+Plus') no-repeat center center/cover;
+            color: white;
+            padding: 60px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        .intro h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .intro p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .category-tile {
+            background: white;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .category-tile:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .category-tile img {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+        .category-tile h2 {
+            color: #6A1B9A;
+            font-size: 1.4rem;
+            margin: 10px 0;
+        }
+        .products {
+            display: none;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .product-tile {
+            background: white;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .product-tile:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .product-tile img {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 10px;
+        }
+        .product-tile h3 {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            color: #6A1B9A;
+        }
+        .about {
+            background: url('https://via.placeholder.com/1200x400/495057/FFFFFF?text=About+Us') no-repeat center center/cover;
+            color: white;
+            padding: 60px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+            text-align: center;
+        }
+        .about h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        .about p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+        footer {
+            background-color: #6A1B9A;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 30px;
+        }
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+    </style>
+    <script>
+        function showProducts(category) {
+            document.querySelectorAll('.products').forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById(category).style.display = 'grid';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="/mnt/data/93dbc8d1-e9ff-408a-adfd-0d12e8ea7c8d.jpg" alt="SMART PACK PLUS Logo">
+        <h1>SMART PACK PLUS</h1>
+        <p>Reliable Packing, Cleaning, Disposable Supplies for Kitchens and Restaurants</p>
+    </header>
+    <div class="container">
+        <div class="intro" style="background: url('https://via.placeholder.com/1200x600/6A1B9A/FFFFFF?text=Welcome+to+Smart+Pack+Plus') no-repeat center center/cover;">
+            <h2>Welcome to SMART PACK PLUS</h2>
+            <p>Your trusted source for high-quality, reliable packing, cleaning, and disposable supplies for kitchens and restaurants. We specialize in delivering essential products right to your doorstep to keep your business running smoothly.</p>
+        </div>
+        <div class="categories">
+            <div class="category-tile" onclick="showProducts('plastic-products')">
+                <img src="https://via.placeholder.com/150/FFD700/FFFFFF?text=Plastic+Containers" alt="Plastic">
+                <h2>Plastic Food Containers</h2>
+            </div>
+            <div class="category-tile" onclick="showProducts('paper-products')">
+                <img src="https://via.placeholder.com/150/00FF00/FFFFFF?text=Paper+Products" alt="Paper">
+                <h2>Paper Products</h2>
+            </div>
+            <div class="category-tile" onclick="showProducts('aluminium-products')">
+                <img src="https://via.placeholder.com/150/FF4500/FFFFFF?text=Aluminium+Containers" alt="Aluminium">
+                <h2>Aluminium Containers</h2>
+            </div>
+            <div class="category-tile" onclick="showProducts('cleaning-products')">
+                <img src="https://via.placeholder.com/150/1E90FF/FFFFFF?text=Cleaning+Supplies" alt="Cleaning">
+                <h2>Kitchen Cleaning Supplies</h2>
+            </div>
+        </div>
+
+        <div id="plastic-products" class="products">
+            <div class="product-tile">
+                <img src="https://via.placeholder.com/120/FFD700/FFFFFF?text=Plastic+1" alt="Plastic 1">
+                <h3>Round Plastic Container with Lid</h3>
+            </div>
+            <!-- Repeat for 10 products -->
+        </div>
+
+        <div id="paper-products" class="products">
+            <div class="product-tile">
+                <img src="https://via.placeholder.com/120/00FF00/FFFFFF?text=Paper+1" alt="Paper 1">
+                <h3>Paper Napkins</h3>
+            </div>
+            <!-- Repeat for 10 products -->
+        </div>
+
+        <div id="aluminium-products" class="products">
+            <div class="product-tile">
+                <img src="https://via.placeholder.com/120/FF4500/FFFFFF?text=Aluminium+1" alt="Aluminium 1">
+                <h3>Rectangular Aluminium Foil Pan</h3>
+            </div>
+            <!-- Repeat for 10 products -->
+        </div>
+
+        <div id="cleaning-products" class="products">
+            <div class="product-tile">
+                <img src="https://via.placeholder.com/120/1E90FF/FFFFFF?text=Cleaning+1" alt="Cleaning 1">
+                <h3>Heavy-Duty Scrub Pads</h3>
+            </div>
+            <!-- Repeat for 10 products -->
+        </div>
+
+        <div class="about">
+            <h2>About Us</h2>
+            <p>At SMART PACK PLUS, we are committed to providing top-quality products for restaurants and kitchens. With a focus on reliability, affordability, and customer satisfaction, we offer a wide range of essential supplies designed to meet the unique needs of your business. Partner with us for seamless and efficient supply chain solutions.</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 SMART PACK PLUS. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
